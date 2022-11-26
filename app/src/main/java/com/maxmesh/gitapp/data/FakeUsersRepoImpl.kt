@@ -1,7 +1,9 @@
-package com.maxmesh.gitapp
+package com.maxmesh.gitapp.data
 
 import android.os.Handler
 import android.os.Looper
+import com.maxmesh.gitapp.domain.UserEntity
+import com.maxmesh.gitapp.domain.UsersRepo
 
 private const val DATA_LOADING_FAKE_DELAY = 3_000L
 

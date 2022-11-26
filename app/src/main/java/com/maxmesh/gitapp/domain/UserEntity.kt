@@ -1,4 +1,4 @@
-package com.maxmesh.gitapp
+package com.maxmesh.gitapp.domain
 
 data class UserEntity(
     val login: String,

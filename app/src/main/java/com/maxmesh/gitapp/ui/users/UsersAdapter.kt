@@ -1,8 +1,9 @@
-package com.maxmesh.gitapp
+package com.maxmesh.gitapp.ui.users
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.maxmesh.gitapp.domain.UserEntity
 
 class UsersAdapter : RecyclerView.Adapter<UserViewHolder>() {
     private val data = mutableListOf<UserEntity>()
@@ -30,6 +31,6 @@ class UsersAdapter : RecyclerView.Adapter<UserViewHolder>() {
     fun setData(users: List<UserEntity>) {
         data.clear()
         data.addAll(users)
-        notifyDataSetChanged()
+         notifyDataSetChanged()
     }
 }

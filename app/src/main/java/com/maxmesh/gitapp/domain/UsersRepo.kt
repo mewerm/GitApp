@@ -1,4 +1,4 @@
-package com.maxmesh.gitapp
+package com.maxmesh.gitapp.domain
 
 interface UsersRepo {
     //CRUD
