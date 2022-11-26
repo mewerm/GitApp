@@ -20,7 +20,13 @@ class MainActivity : AppCompatActivity(), UsersContract.View {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initViews()
+        presenter = extractPresenter()
         presenter.attach(this)
+    }
+
+    private fun extractPresenter(): UsersContract.Presenter {
+        return lastCustomNonConfigurationInstance as? UsersContract.Presenter
+            ?: UsersPresenter(app.usersRepo)
     }
 
     private fun initViews() {
@@ -48,6 +54,10 @@ class MainActivity : AppCompatActivity(), UsersContract.View {
     private fun initRecyclerView() {
         binding.usersRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.usersRecyclerView.adapter = adapter
+    }
+
+    override fun onRetainCustomNonConfigurationInstance(): UsersContract.Presenter {
+        return presenter
     }
 
     override fun onDestroy() {
