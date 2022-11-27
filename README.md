@@ -1,2 +1,2 @@
 # GitApp
-Popular libs lesson 1
+Popular libs
