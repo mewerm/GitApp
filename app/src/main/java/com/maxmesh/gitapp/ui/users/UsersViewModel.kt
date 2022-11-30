@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.maxmesh.gitapp.domain.UserEntity
 import com.maxmesh.gitapp.domain.UsersRepo
+import com.maxmesh.gitapp.utils.SingleEventLiveData
 
 class UsersViewModel(
     private val usersRepo: UsersRepo,
@@ -11,7 +12,7 @@ class UsersViewModel(
 
     override val usersLiveData: LiveData<List<UserEntity>> = MutableLiveData()
 
-    override val errorLiveData: LiveData<Throwable> = MutableLiveData()
+    override val errorLiveData: LiveData<Throwable> = SingleEventLiveData()
 
     override val progressLiveData: LiveData<Boolean> = MutableLiveData()
 
