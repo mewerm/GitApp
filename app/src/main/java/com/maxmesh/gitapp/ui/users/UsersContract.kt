@@ -1,18 +1,14 @@
 package com.maxmesh.gitapp.ui.users
 
+import androidx.lifecycle.LiveData
 import com.maxmesh.gitapp.domain.UserEntity
 
 interface UsersContract {
 
-    interface View {
-        fun showUsers(users: List<UserEntity>)
-        fun showError(throwable: Throwable)
-        fun showProgress(inProgress: Boolean)
-    }
-
-    interface Presenter {
-        fun attach(view: View)
-        fun detach()
+    interface ViewModel {
+        val usersLiveData: LiveData<List<UserEntity>>
+        val errorLiveData: LiveData<Throwable>
+        val progressLiveData: LiveData<Boolean>
 
         fun onRefresh()
     }
